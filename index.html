@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Management Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Diabetes Care Portal</h1>
+        <p>Continuous Monitoring for Better Health Management</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#cgm">Continuous Glucose Monitoring</a>
+        <a href="#alerts">Real-Time Alerts</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#portal">Patient Portal</a>
+        <a href="#education">Education</a>
+        <a href="#log">Log Your Info</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Continuous Glucose Monitoring Section -->
+        <section id="cgm">
+            <h2>Continuous Glucose Monitoring (CGM)</h2>
+            <p>A sensor tracks blood sugar levels 24/7, sending data to an app for both patients and healthcare providers.</p>
+        </section>
+
+        <!-- Real-Time Alerts Section -->
+        <section id="alerts">
+            <h2>Real-Time Alerts</h2>
+            <p>Receive notifications for high or low blood sugar levels to help prevent emergencies.</p>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits">
+            <h2>Benefits</h2>
+            <h3>For Patients</h3>
+            <ul>
+                <li>Fewer manual glucose checks</li>
+                <li>Early warnings to prevent complications</li>
+            </ul>
+            <h3>For Healthcare Providers</h3>
+            <ul>
+                <li>Instant access to patient data</li>
+                <li>Ability to intervene early, reducing hospital visits</li>
+            </ul>
+        </section>
+
+        <!-- Patient Portal Section -->
+        <section id="portal">
+            <h2>Patient Portal</h2>
+            <p>Log daily sugar levels, monitor trends, and record dietary and lifestyle information.</p>
+            <button onclick="displaySuggestion()">Get AI Health Tips</button>
+            <p id="suggestion"></p>
+        </section>
+
+        <!-- Educational Resources Section -->
+        <section id="education">
+            <h2>Educational Resources</h2>
+            <p>Browse resources on managing diabetes and healthy lifestyle choices.</p>
+            <body>
+                <h1>Diabetes Management Tips</h1>
+            
+                <h2>Healthy Eating Tips</h2>
+                <ul>
+                    <li><strong>Balanced Diet:</strong> Focus on eating a variety of nutrient-dense foods, including whole grains, lean proteins, healthy fats, fruits, and vegetables.</li>
+                    <li><strong>Portion Control:</strong> Use smaller plates and be mindful of serving sizes to manage blood sugar levels effectively.</li>
+                    <li><strong>Low Glycemic Index Foods:</strong> Opt for foods like legumes, oats, and non-starchy vegetables that release energy slowly.</li>
+                    <li><strong>Limit Sugary and Processed Foods:</strong> Reduce intake of sugary drinks, desserts, and highly processed snacks.</li>
+                    <li><strong>Meal Timing:</strong> Eat meals at consistent times each day to regulate blood sugar.</li>
+                </ul>
+            
+                <h2>Understanding Insulin Management</h2>
+                <ul>
+                    <li><strong>Know Your Insulin Types:</strong> Understand the difference between rapid-acting, intermediate, and long-acting insulin.</li>
+                    <li><strong>Monitor Blood Sugar Regularly:</strong> Track levels before meals and bedtime as recommended.</li>
+                    <li><strong>Injection Sites:</strong> Rotate injection sites to prevent skin irritation or thickening.</li>
+                    <li><strong>Carbohydrate Counting:</strong> Learn how to match insulin doses to carbohydrate intake for better control.</li>
+                    <li><strong>Consult a Specialist:</strong> Work closely with your healthcare provider to adjust insulin dosage as needed.</li>
+                </ul>
+            
+                <h2>Exercise for Diabetes</h2>
+                <ul>
+                    <li><strong>Aerobic Exercise:</strong> Activities like walking, swimming, or cycling for at least 30 minutes a day, five days a week.</li>
+                    <li><strong>Strength Training:</strong> Incorporate resistance exercises twice a week to improve muscle strength and glucose uptake.</li>
+                    <li><strong>Consistency is Key:</strong> Exercise regularly to maintain stable blood sugar levels.</li>
+                    <li><strong>Monitor Blood Sugar:</strong> Check glucose levels before and after exercise, especially if taking insulin.</li>
+                    <li><strong>Stay Hydrated:</strong> Drink water to prevent dehydration during physical activity.</li>
+                </ul>
+            
+                <h2>Stress and Diabetes Education</h2>
+                <ul>
+                    <li><strong>Understand the Connection:</strong> Stress can elevate blood sugar levels due to the release of stress hormones like cortisol.</li>
+                    <li><strong>Stress Management Techniques:</strong> Practice mindfulness, meditation, or yoga to reduce stress levels.</li>
+                    <li><strong>Support Groups:</strong> Engage with diabetes support groups to share experiences and learn coping strategies.</li>
+                    <li><strong>Time Management:</strong> Organize daily routines to reduce overwhelming feelings and avoid stress-induced spikes in blood sugar.</li>
+                    <li><strong>Education Workshops:</strong> Attend diabetes management classes to build confidence in handling stress and managing the condition effectively.</li>
+                </ul>
+            </body>
+        </section>
+
+        <!-- Log Blood Sugar and Diet Info -->
+        <section id="log">
+            <h2>Log Your Information</h2>
+            <form id="logForm">
+                <label for="sugarLevel">Blood Sugar Level (mg/dL):</label>
+                <input type="number" id="sugarLevel" name="sugarLevel" required>
+
+                <label for="meal">Meal Type:</label>
+                <select id="meal" name="meal">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                </select>
+
+                <label for="notes">Dietary Notes:</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Enter dietary details..."></textarea>
+
+                <button type="button" onclick="logData()">Log Information</button>
+            </form>
+            <div id="logEntries"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Diabetes Care Portal | Proactive Health Management</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <div class="popup">
+        <form class="form">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 34 34" height="34" width="34">
+              <path stroke-linejoin="round" stroke-width="2.5" stroke="#115DFC" d="M7.08385 9.91666L5.3572 11.0677C4.11945 11.8929 3.50056 12.3055 3.16517 12.9347C2.82977 13.564 2.83226 14.3035 2.83722 15.7825C2.84322 17.5631 2.85976 19.3774 2.90559 21.2133C3.01431 25.569 3.06868 27.7468 4.67008 29.3482C6.27148 30.9498 8.47873 31.0049 12.8932 31.1152C15.6396 31.1838 18.3616 31.1838 21.1078 31.1152C25.5224 31.0049 27.7296 30.9498 29.331 29.3482C30.9324 27.7468 30.9868 25.569 31.0954 21.2133C31.1413 19.3774 31.1578 17.5631 31.1639 15.7825C31.1688 14.3035 31.1712 13.564 30.8359 12.9347C30.5004 12.3055 29.8816 11.8929 28.6437 11.0677L26.9171 9.91666"></path>
+              <path stroke-linejoin="round" stroke-width="2.5" stroke="#115DFC" d="M2.83331 14.1667L12.6268 20.0427C14.7574 21.3211 15.8227 21.9603 17 21.9603C18.1772 21.9603 19.2426 21.3211 21.3732 20.0427L31.1666 14.1667"></path>
+              <path stroke-width="2.5" stroke="#115DFC" d="M7.08331 17V8.50001C7.08331 5.82872 7.08331 4.49307 7.91318 3.66321C8.74304 2.83334 10.0787 2.83334 12.75 2.83334H21.25C23.9212 2.83334 25.2569 2.83334 26.0868 3.66321C26.9166 4.49307 26.9166 5.82872 26.9166 8.50001V17"></path>
+              <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#115DFC" d="M14.1667 14.1667H19.8334M14.1667 8.5H19.8334"></path>
+            </svg>
+          </div>
+          <div class="note">
+            <label class="title">Subscribe for updates</label>
+            <span class="subtitle">Make sure to sign up for our Weekly Meal Plan & Diabetes Tips Newsletter to receive tailored, diabetes-friendly recipes, nutritional advice, and practical tips for managing your health directly in your inbox! :)</span>
+          </div>
+          <input placeholder="Enter your e-mail" title="Enter your e-mail" name="email" type="email" class="input_field">
+          <button class="submit">Submit</button>
+        </form>
+      </div>
+</body>
+</html>
